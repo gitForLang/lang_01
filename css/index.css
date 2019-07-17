@@ -1,0 +1,695 @@
+div,span,a,body,html,ul,li{
+	margin:0; 
+	padding:0;
+	box-sizing: border-box;
+}
+
+body{
+	margin:0; 
+	padding:0; 
+	overflow-y: hidden; 
+	color:#fff;
+}
+li{
+	list-style-type:none;
+}
+
+.op-section{background-color:#1abc9c;}
+.second{background-color:#3598db;}
+.third{background-color:#34495e;}
+.fourth{background-color:#2ecc71;}
+.fifth{background-color:#8e44ad;}
+.last{background-color:#f39c12;}
+
+/* 固定logo */
+.fix_pinuo_logo{
+	position: fixed;
+	top: 87px;
+	left: 50%;
+	transform: translateX(-50%);
+	height: 153px;
+	z-index: 999;
+	opacity: 0;
+}
+.fix_item{
+	width: 153px;
+	height: 153px;
+	border: solid 1px #33332f;
+	line-height: 153px;
+	text-align: center;
+	cursor: pointer;
+}
+
+/* 右侧固定栏 */
+.fix_block_right{
+	height: 100%;
+	width: 87px;
+	position: fixed;
+	z-index: 999999;
+	right: 0;
+	top: 0;
+	border-left: 0.5px solid #cecbcc;
+}
+.page_progress{
+	width: 3px;
+	height: 20%;
+	background: #ff1c3b;
+	position: absolute;
+	right: 100%;
+	top: 0;
+}
+.languages{
+	margin-top: 70px;
+}
+.language_item{
+	text-align: center;
+	font-family: NotoSansHans-Regular;
+	font-size: 14px;
+	line-height: 32px;
+	color: #9f9d9d;
+	opacity: 0.5;
+}
+.language_item.active{
+	opacity: 1;
+}
+.links{
+	position: absolute;
+	bottom: 87px;
+	width: 100%;
+	left: 0;
+}
+.link_item{
+	text-align: center;
+	margin: 50px 0;
+	cursor: pointer;
+}
+/* 左侧固定栏 */
+.fix_block_left{
+	height: 100%;
+	width: 87px;
+	position: fixed;
+	z-index: 999999;
+	left: 0;
+	top: 0;
+	border-right: 0.5px solid #cecbcc;
+}
+.menu_button{
+	height: 60%;
+	text-align: center;
+	position: relative;
+}
+.menu_button_icon{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.loading_block{
+	height: 40%;
+	background: #FF1C3B;
+	position: relative;
+}
+.loading_text{
+	font-family: NotoSansHans-Regular;
+	font-size: 12px;
+	line-height: 20px;
+	color: #fcfcfc;
+	transform: rotate(90deg);
+	position: absolute;
+	top: 40px;
+	left: 15px;
+}
+.loading_text.bottom{
+	bottom: 30px;
+	left: 25px;
+	top:auto;
+}
+.loading_progress{
+	height: 60%;
+	width: 3px;
+	background: #b81b31;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	overflow: hidden;
+}
+.progress{
+	background: #fff;
+	height: 0%;
+}
+
+/* 第一屏 */
+.op-section.first{
+	background-color: #ededef;
+	background-image: url(../img/bg1.png);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	position: relative;
+}
+.pinuo_logo{
+	position: absolute;
+	left: 50%;
+	top: 67px;
+	transform: translate(-50%);
+}
+.section_right{
+	width: 520px;
+	height: 100%;
+	border-left: 1px solid rgba(221,220,222,0.2);
+	position: relative;
+}
+.section_right_content{
+	position: absolute;
+	width: 100%;
+	height: 50%;
+	bottom: 0;
+	left: 0;
+}
+.right_content_red{
+	width: 3px;
+	height: 44px;
+	background: #FF1C3B;
+	margin-top: 100px;
+}
+.content_english{
+	width: 135px;
+	font-family: NotoSansHans-Bold;
+	font-size: 22px;
+	color: #33332f;
+	margin-top: 44px;
+	font-weight: 600;
+}
+.conotent_chiness{
+	font-family: NotoSansHans-Regular;
+	font-size: 14px;
+	color: #33332f;
+	margin-top: 44px;
+}
+
+.section_content{
+	position: absolute;
+	top: 50%;
+	left: 170px;
+	transform: translateY(-40%);
+}
+.page1_title{
+	margin-bottom: 80px;
+}
+.section_content_main{
+	width: 671px;
+	margin-left: 110px;
+}
+.section_content_title{
+	font-family: NotoSansHans-Bold;
+	font-size: 24px;
+	letter-spacing: 5px;
+	color: #33332f;
+	font-weight: 600;
+	margin-bottom: 35px;
+}
+.section_content_text{
+	font-family: NotoSansHans-Regular;
+	font-size: 14px;
+	line-height: 24px;
+	color: #33332f;
+	opacity: 0.6;
+}
+.section_content_btn{
+	font-family: NotoSansHans-Regular;
+	font-size: 14px;
+	color: #33332f;
+	width: 158px;
+	height: 40px;
+	border: solid 1px #33332f;
+	margin-top: 70px;
+	text-align: center;
+	line-height: 40px;
+	cursor: pointer;
+	position: relative;
+}
+.btn_text{
+	position: absolute;
+	transform: translate(-50%,-50%);
+	width: 100%;
+	height: 100%;
+	top: 50%;
+	left: 50%
+}
+.section_content_bg{
+	height: 100%;
+	width: 0%;
+	background: #FF1C3B;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+/* 第二屏 */
+.op-section.second{
+	background: #EDEDEF;
+	position: relative;
+	padding-top: 350px;
+}
+.section_second_content{
+	padding: 0 173px;
+}
+.second_content_item{
+	width: 50%;
+}
+.second_content_item_right{
+	width: 40%;
+	background: #fff;
+	height: 261px;
+	padding: 88px;
+	position: absolute;
+    left: 50%;
+	z-index: 3;
+}
+.second_content_item_title{
+	font-family: NotoSansHans-Bold;
+	font-size: 24px;
+	line-height: 16px;
+	letter-spacing: 3px;
+	color: #33332f;
+	margin-bottom: 35px;
+}
+.second_content_item_text{
+	font-family: NotoSansHans-Regular;
+	font-size: 14px;
+	line-height: 16px;
+	color: #33332f;
+	opacity: 0.6;
+	padding-right: 88px;
+}
+.writing_item{
+	
+}
+.writing_item_img{
+	margin-right: 38px;
+}
+.writing_item_info{
+	width: calc(100% - 90px);
+}
+.writing_item_info_title{
+	font-family: NotoSansHans-Bold;
+	font-size: 24px;
+	letter-spacing: 3px;
+	color: #33332f;
+	margin-bottom: 15px;
+}
+.writing_item_info_content{
+	font-family: NotoSansHans-Regular;
+	font-size: 14px;
+	line-height: 18px;
+	color: #33332f;
+	opacity: 0.7;
+}
+.section_second_banner{
+	width: 100%;
+	height: 507px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.banner_left{
+	width: 50%;
+	height: 100%;
+	background: #fff;
+	padding-left: 174px;
+	padding-top: 80px;
+	position: relative;
+}
+.banner_index{
+	width: 87px;
+	height: 87px;
+	background: #FF1C3B;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: NotoSansHans-Medium;
+	font-size: 30px;
+	letter-spacing: 4px;
+	color: #fcfcf4;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.banner_info{
+	padding-right: 96px;
+}
+.banner_title_en{
+	font-family: NotoSansHans-Black;
+	font-weight: bold;
+	font-size: 30px;
+	line-height: 60px;
+	color: #33332f;
+}
+.banner_title_cn{
+	font-family: NotoSansHans-Bold;
+	font-size: 24px;
+	line-height: 24px;
+	letter-spacing: 3px;
+	color: #33332f;
+	font-weight: bold;
+}
+.banner_info_content{
+	font-family: NotoSansHans-Regular;
+	font-size: 14px;
+	line-height: 20px;
+	color: #33332f;
+	opacity: 0.7;
+	margin-top: 40px;
+}
+.banner_progress{
+	width: 3px;
+	height: 100%;
+	background: #fff;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.banner_progress_contant{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: #FF1C3B;
+	height: 50%;
+}
+.banner_right{
+	width: 50%;
+	height: 100%;
+}
+
+/* 第三屏 */
+.op-section.third{
+	background: #EDEDEF;
+	position: relative;
+	overflow: hidden;
+}
+.demo_item{
+	width: 25%;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+.demo_item_img{
+	
+}
+.demo_item_bg{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: rgba(0,0,0,0.2);
+}
+.demo_item_content{
+	position: absolute;
+	top: 170px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	height: 644px;
+}
+.demo_title_en{
+	font-family: NotoSansHans-Medium;
+	font-size: 24px;
+	color: #fdfbfb;
+	margin-bottom: 20px;
+}
+.demo_title_cn{
+	font-family: NotoSansHans-Regular;
+	font-size: 18px;
+	color: #fffefe;
+}
+.demo_tip{
+	font-family: NotoSansHans-Regular;
+	font-size: 14px;
+	color: #fffefe;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 15px;
+}
+
+/* 第四屏 */
+.op-section.fourth{
+	background: #fff;
+	position: relative;
+}
+.client_mian{
+	height: 100%;
+}
+.client_main_item{
+	width: 50%;
+	height: 100%;
+	position: relative;
+}
+.client_main_item_top{
+	width: 100%;
+	height: 674px;
+	overflow: hidden;
+}
+.client_main_bottom{
+	height: calc(100% - 674px);
+	background: #343333;
+	position: relative;
+}
+.client_bttom_maths{
+	padding-left: 86px;
+	padding-top: 80px;
+}
+.client_math_item{
+	font-family: Impact;
+	font-size: 36px;
+	letter-spacing: 6px;
+	color: #fbfbfb;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 25%;
+}
+.client_math_item_title{
+	font-family: NotoSansHans-Medium;
+	font-size: 14px;
+	line-height: 16px;
+	letter-spacing: 2px;
+	color: #fffffe;
+	margin-top: 20px;
+}
+.bottom_menu_btn{
+	width: 87px;
+	height: 87px;
+	background: #FF1C3B;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+.client_banner_index{
+	width: 87px;
+	height: 87px;
+	background: #FF1C3B;
+	text-align: center;
+	line-height: 87px;
+	font-family: NotoSansHans-Medium;
+	font-size: 30px;
+	letter-spacing: 4px;
+	color: #fcfcf4;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.client_right{
+	width: 613px;
+	margin: 0 auto;
+	padding: 87px 0;
+	height: 674px;
+}
+.client_right_title_en{
+	font-family: NotoSansHans-Black;
+	font-size: 30px;
+	color: #33332f;
+	font-weight: 600;
+}
+.client_right_title_cn{
+	font-family: NotoSansHans-Bold;
+	font-size: 24px;
+	letter-spacing: 3px;
+	color: #33332f;
+	line-height: 25px;
+	font-weight: 600;
+	margin-top: 10px;
+}
+.client_right_descriptiont{
+	font-family: NotoSansHans-Regular;
+	font-size: 14px;
+	line-height: 16px;
+	color: #33332f;
+	opacity: 0.7;
+	margin: 50px 0;
+}
+
+.client_company_list{
+	display: flex;
+	flex-wrap: wrap;
+}
+.client_company_item{
+	height: 144px;
+	width: 204px;
+	display: flex;
+	align-items: center;
+	border: solid 0.5px #d6d6d6;
+	justify-content: center;
+}
+.right_bottom{
+	background: #4a4a4a;
+	text-align: center;
+	padding-top: 90px;
+}
+.goUp_btn{
+	background: #fff;
+	left: 0;
+}
+.right_bottom_title{
+	font-family: NotoSansHans-Bold;
+	font-size: 24px;
+	line-height: 16px;
+	letter-spacing: 3px;
+	color: #fefefc;
+	margin-bottom: 60px;
+}
+.right_bottom_description{
+	font-family: NotoSansHans-Regular;
+	font-size: 14px;
+	line-height: 16px;
+	color: #fefefc;
+	opacity: 0.8;
+}
+.client_progress{
+	width: 3px;
+	height: 674px;
+	background: #fff;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.client_progress_main{
+	background: #FF1C3B;
+	height: 50%;
+}
+
+/* 第五屏 */
+.op-section.fifth{
+	background: #fff;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+.section_company_info{
+	flex: 1;
+	padding: 0 86px;
+}
+.section_footer{
+	height: 87px;
+	font-family: MicrosoftYaHei;
+	font-size: 12px;
+	line-height: 87px;
+	color: #fefcfc;
+	background: #2e2e2f;
+	text-align: center;
+}
+.company_info_item{
+	width: 25%;
+	height: 100%;
+	padding-top: 200px;
+	position: relative;
+}
+.company_logo{
+	margin-left: 87px;
+}
+.submit_info_main{
+	border-left: solid 1px #d8d8da;
+	padding-left: 46px;
+}
+.submit_main_hr{
+	width: 3px;
+	height: 44px;
+	background: #FF1C3B;
+	position: absolute;
+	left: 0;
+	top: 161px;
+}
+.submit_main_title{
+	font-family: NotoSansHans-Bold;
+	font-size: 18px;
+	color: #373733;
+	font-weight: bold;
+	margin-bottom: 40px;
+}
+.submit_main_info{
+	font-family: NotoSansHans-Regular;
+	font-size: 14px;
+	color: #373733;
+	opacity: 0.8;
+	margin-bottom: 15px;
+}
+.submit_input_main{
+	width: 230px;
+	margin-top: 130px;
+}
+.submit_input{
+	border-bottom: solid 1px #b4b4b5;
+	height: 40px;
+	margin-bottom: 10px;
+}
+.input_title{
+	font-family: NotoSansHans-Regular;
+	font-size: 12px;
+	color: #4b4b4d;
+	opacity: 0.8;
+	width: 60px;
+	line-height: 40px;
+}
+.sub_input{
+	font-family: NotoSansHans-Regular;
+	font-size: 12px;
+	color: #4b4b4d;
+	opacity: 0.8;
+	border: none;
+	outline: none;
+	background: #fff;
+	height: 36px;
+	width: calc(100% - 60px);
+}
+
+.submit_btn{
+	display: flex;
+	padding: 0 10px;
+	height: 37px;
+	justify-content: space-between;
+	font-family: NotoSansHans-Regular;
+	font-size: 14px;
+	color: #f8f8fc;
+	background: #3f3f3b;
+	align-items: center;
+	margin-top: 30px;
+}
+.company_ewm{
+	margin-top: 20px;
+}
+.ewm_tittle{
+	width: 14px;
+	font-family: NotoSansHans-Regular;
+	font-size: 14px;
+	color: #373733;
+	margin-left: 15px;
+	line-height: 1;
+}

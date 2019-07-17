@@ -1,0 +1,11 @@
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+.clearFloat:after{
+	content: '';
+	clear: both;
+	display: block;
+}
