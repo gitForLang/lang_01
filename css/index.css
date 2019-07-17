@@ -13,13 +13,89 @@ body{
 li{
 	list-style-type:none;
 }
+a{
+	cursor: pointer!important;
+	color: #3e3e3a;
+	text-decoration: none;
+}
+/* 主容器 */
+#view.active{
+    perspective: 800;
+    -webkit-perspective: 800;
+	transition: all 0.5s ease-in-out;
+}
+#frame.active{
+    transform: rotateY(-9deg);
+	transition: all 0.5s ease-in-out;
+}
 
-.op-section{background-color:#1abc9c;}
-.second{background-color:#3598db;}
-.third{background-color:#34495e;}
-.fourth{background-color:#2ecc71;}
-.fifth{background-color:#8e44ad;}
-.last{background-color:#f39c12;}
+/* 右侧菜单 */
+.pinuo_menu_bg{
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999999999999;
+	display: none;
+}
+.pinuo_menu_bg_main{
+	background: rgba(0,0,0,0.5);
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.pinuo_menu_main{
+	height: 100%;
+	width: 300px;
+	position: absolute;
+	top: 0;
+	left: -300px;
+	background: #fff;
+	z-index: 3;
+}
+.pinuo_menu_left{
+	height: 100%;
+	width: 240px;
+	padding-top: 87px;
+	text-align: center;
+}
+.menu_logo{
+	
+}
+.menu_ul{
+	text-align: center;
+	margin-top: 20%;
+	margin-bottom: 20%;
+}
+.menu_ul_li{
+	font-family: NotoSansHans-Regular;
+	font-size: 20px;
+	color: #3e3e3a;
+	line-height: 50px;
+	height: 50px;
+	margin-bottom: 5px;
+	position: relative;
+}
+.pinuo_menu_right{
+	height: 100%;
+	width: 60px;
+	background: #ededef;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.pinuo_menu_right img{
+	margin: 50px 0px;
+}
+.pinuo_menu_right_btn{
+	width: 100%;
+    text-align: center;
+}
 
 /* 固定logo */
 .fix_pinuo_logo{
@@ -519,7 +595,8 @@ li{
 	color: #fffefe;
 	position: absolute;
 	left: 0;
-	bottom: 0;
+	margin-top: 50px;
+	/* bottom: 0; */
 	width: 15px;
 }
 .hover_icon{
@@ -586,7 +663,7 @@ li{
 .bottom_menu_btn{
 	width: 87px;
 	height: 87px;
-	background: #FF1C3B;
+	background: #fff;
 	display: flex;
 	align-items: center;
 	justify-content: center;

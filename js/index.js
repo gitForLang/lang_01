@@ -35,14 +35,16 @@ $(document).ready(function(){
 			// 回到顶部
 			$(".goUp_btn").click(function(){
 				$(".radio_li").trigger("click");
+				$(".menu_button_icon,.loading_block").animate({opacity:1},500);
+				$(".fix_pinuo_logo").animate({opacity:0},500);
 			});
 			// 鼠标经过按钮
-			$(".section_content_btn").hover(function(){
-				$(this).css("color","#fff");
-				$(this).children(".section_content_bg").animate({width:"100%"},500);
+			$(".section_content_btn,.menu_ul_li").hover(function(){
+				/* $(this).css("color","#fff"); */
+				$(this).children(".section_content_bg").animate({width:"100%"},300);
 			},function(){
-				$(this).attr("style","");
-				$(this).children(".section_content_bg").animate({width:"0%"},500);
+				/* $(this).attr("style",""); */
+				$(this).children(".section_content_bg").animate({width:"0%"},300);
 			});
 			// 鼠标经过菜单按钮
 			$(".menu_button").hover(function(){
@@ -50,11 +52,11 @@ $(document).ready(function(){
 			},function(){
 				$(".menu_button_icon").attr("src","img/menu_icon.png");
 			});
-			$(".menu_icon_main").hover(function(){
-				$(this).css("background","rgb(237,237,239)");
-				$(".menu_icon").attr("src","img/menu_white_icon.png");
+			$(".menu_icon_main,.bottom_menu").hover(function(){
+				$(this).css("background","#ff1c3b");
+				$(this).children("img").attr("src","img/menu_white_icon.png");
 			},function(){
-				$(".menu_icon").attr("src","img/menu_icon.png");
+				$(this).children("img").attr("src","img/menu_icon.png");
 				$(this).attr("style","");
 			});
 			
@@ -62,14 +64,14 @@ $(document).ready(function(){
 			$(document).bind("DOMMouseScroll mousewheel keydown", function(e){
 				index = num;
 				if(num>0){
-					$(".menu_button_icon,.loading_block").animate({opacity:0},1000);
-					$(".fix_pinuo_logo").animate({opacity:1},1000);
+					$(".menu_button,.loading_block").animate({opacity:0},500);
+					$(".fix_pinuo_logo").animate({opacity:1},500);
 				} else {
-					$(".menu_button_icon,.loading_block").animate({opacity:1},1000);
-					$(".fix_pinuo_logo").animate({opacity:0},1000);
+					$(".menu_button,.loading_block").animate({opacity:1},500);
+					$(".fix_pinuo_logo").animate({opacity:0},500);
 				}
 				var progress = ((index+1) * winHeight) / scrollHeight;
-				$(".page_progress").animate({height:progress*100 + "%"},500);
+				$(".page_progress").animate({height:progress*100 + "%"},200);
 				
 				if(index == 3) {
 					app.mathAnimate(".client1",app.client1)
@@ -91,12 +93,44 @@ $(document).ready(function(){
 			});
 			
 			// 鼠标经过第三屏
-			$(".demo_item").hover(function(){
+			$("body").on("mouseover",".demo_item",function(){
+				$(this).children(".demo_item_bg").animate({opacity:0},50);
+				$(this).children(".hover_icon").animate({opacity:1},50);
+			});
+			$("body").on("mouseleave",".demo_item",function(){
+				$(this).children(".demo_item_bg").animate({opacity:1},50);
+				$(this).children(".hover_icon").animate({opacity:0},50);
+			});
+			/* $(".demo_item").hover(function(){
 				$(this).children(".demo_item_bg").animate({opacity:0},200);
 				$(this).children(".hover_icon").animate({opacity:1},100);
 			},function(){
 				$(this).children(".demo_item_bg").animate({opacity:1},200);
 				$(this).children(".hover_icon").animate({opacity:0},100);
+			}); */
+			
+			// 打开菜单
+			$(".menu_button,.menu_icon_main,.bottom_menu").click(function(){
+				$(".pinuo_menu_bg").show();
+				$(".pinuo_menu_main").animate({left:"0"},500);
+				$("#frame").addClass("active");
+				$("#view").addClass("active");
+			});
+			// 关闭菜单
+			/* $(document).click(function(e){
+				var _con = $('.pinuo_menu_main,.menu_button,.menu_icon_main,.bottom_menu');   
+				if(!_con.is(e.target) && _con.has(e.target).length === 0){ 
+					app.closeMenu();
+				}
+			}); */
+			/* $(document).click(function(e){
+				var target = $(e.target);
+				if(target.closest(".pinuo_menu_main").length != 0 && target.closest(".menu_button").length != 0) return;
+				app.closeMenu();
+
+			}); */
+			$(".navclose,.pinuo_menu_bg_main").click(function(){
+				app.closeMenu();
 			});
 			
 			app.checkCopywrting(app.copywrting);
@@ -104,6 +138,13 @@ $(document).ready(function(){
 			app.dotAnimate();
 			app.clickNextPage();
 			app.autoCheckClient(app.clientIndex,app.speed);
+		},
+		closeMenu() {
+			$(".pinuo_menu_main").animate({left:"-300px"},500,function(){
+				$(".pinuo_menu_bg").hide();
+			});
+			$("#frame").removeClass("active");
+			$("#view").removeClass("active");
 		},
 		mathAnimate(name,numberName) {	//数字递增动画
 			var client1Num = parseInt($(name).text());
@@ -170,22 +211,66 @@ $(document).ready(function(){
 			var item = $(".demo_item");
 			$(".demo_item").css("width",winWidth/4);
 			$(".demo_list_main").css("width",item.length*(winWidth/4)+"px");
+			var length = item.length;
 			var index = 0;
 			var step = item.length-4;
 			var move = 0;
+			var noChangeLength = $('.demo_list_main2 .demo_item').length;
+			var nextIndex = 0;
+			var preIndex = 0;
+			
 			$(".prev_btn").click(function(){
+				if(preIndex > (noChangeLength-1)){
+					preIndex = 1;
+				} else {
+					preIndex++;
+				}
 				if(index>0){
 					index --;
 					move = move + (winWidth/4);
 					$(".demo_list_main").animate({"margin-left":move+"px"});
+				} else {
+					
+					length++;
+					$(".demo_list_main").css("width",length*(winWidth/4)+"px");
+					
+					var item = $('.demo_list_main2 .demo_item').eq((noChangeLength-1)-(preIndex-1)).prop('outerHTML');
+					$(".demo_list_main").prepend(item);
+					
+					$(".demo_list_main").css("margin-left",(winWidth/4)*(-1)+"px");
+					$(".demo_list_main").animate({"margin-left":"0px"});
+					
 				}
 			});
 			$(".next_btn").click(function(){
-				if(index < step){
-					index ++;
+				//if(index < step){
+					if(nextIndex > (noChangeLength-1)){
+						nextIndex = 1;
+					} else {
+						nextIndex ++;
+					}
+					index++;
 					move = move - (winWidth/4);
-					$(".demo_list_main").animate({"margin-left":move+"px"});
-				}
+					$(".demo_list_main").animate({"margin-left":move+"px"},function(){
+						length++;
+						$(".demo_list_main").css("width",length*(winWidth/4)+"px");
+						var item = $('.demo_list_main2 .demo_item').eq(nextIndex-1).prop('outerHTML');
+						$(".demo_list_main").append(item);
+						//$(".demo_item").eq(0).remove();
+					});
+				//}
+			});
+			
+			var timer = setInterval(function(){
+				$(".next_btn").trigger("click");
+			},1000);
+			
+			$(".op-section.third").hover(function(){
+				clearInterval(timer);
+			},function(){
+				timer = setInterval(function(){
+					$(".next_btn").trigger("click");
+				},1000);
 			});
 		},
 		autoCheckClient(index,speed) {	// 第四屏切换动画
