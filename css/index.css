@@ -24,7 +24,7 @@ li{
 /* 固定logo */
 .fix_pinuo_logo{
 	position: fixed;
-	top: 87px;
+	top: 40px;
 	left: 50%;
 	transform: translateX(-50%);
 	height: 153px;
@@ -37,7 +37,8 @@ li{
 	border: solid 1px #33332f;
 	line-height: 153px;
 	text-align: center;
-	cursor: pointer;
+	/* cursor: pointer; */
+	position: relative;
 }
 
 /* 右侧固定栏 */
@@ -81,7 +82,7 @@ li{
 .link_item{
 	text-align: center;
 	margin: 50px 0;
-	cursor: pointer;
+	/* cursor: pointer; */
 }
 /* 左侧固定栏 */
 .fix_block_left{
@@ -125,7 +126,7 @@ li{
 	top:auto;
 }
 .loading_progress{
-	height: 60%;
+	height: 50%;
 	width: 3px;
 	background: #b81b31;
 	position: absolute;
@@ -225,7 +226,7 @@ li{
 	margin-top: 70px;
 	text-align: center;
 	line-height: 40px;
-	cursor: pointer;
+	/* cursor: pointer; */
 	position: relative;
 }
 .btn_text{
@@ -249,10 +250,14 @@ li{
 .op-section.second{
 	background: #EDEDEF;
 	position: relative;
-	padding-top: 350px;
+	/* padding-top: 350px; */
 }
 .section_second_content{
 	padding: 0 173px;
+	height: calc(100% - 507px);
+	display: flex;
+	align-items: center;
+	position: relative;
 }
 .second_content_item{
 	width: 50%;
@@ -265,11 +270,30 @@ li{
 	position: absolute;
     left: 50%;
 	z-index: 3;
+	bottom: 0;
+    transform: translateY(40%);
+}
+.check_writing_btn{
+	position: absolute;
+	right: 90px;
+	top: 80px;
+}
+.prev_btn2{
+	padding: 20px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+}
+.next_btn2{
+	padding: 20px;
+	display: flex;
+	text-align: center;
+	align-items: center;
 }
 .second_content_item_title{
 	font-family: NotoSansHans-Bold;
 	font-size: 24px;
-	line-height: 16px;
+	line-height: 30px;
 	letter-spacing: 3px;
 	color: #33332f;
 	margin-bottom: 35px;
@@ -282,8 +306,14 @@ li{
 	opacity: 0.6;
 	padding-right: 88px;
 }
+.writing_items{
+	position: relative;
+}
 .writing_item{
-	
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
 }
 .writing_item_img{
 	margin-right: 38px;
@@ -297,6 +327,9 @@ li{
 	letter-spacing: 3px;
 	color: #33332f;
 	margin-bottom: 15px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 .writing_item_info_content{
 	font-family: NotoSansHans-Regular;
@@ -337,6 +370,17 @@ li{
 }
 .banner_info{
 	padding-right: 96px;
+	position: relative;
+	width: calc(100% - 150px);
+}
+.banner_info_item{
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0;
+}
+.banner_info_item.active{
+	z-index: 3;
 }
 .banner_title_en{
 	font-family: NotoSansHans-Black;
@@ -375,11 +419,30 @@ li{
 	left: 0;
 	width: 100%;
 	background: #FF1C3B;
-	height: 50%;
+	height: 0%;
 }
 .banner_right{
 	width: 50%;
 	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+.banner_right_img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+.loading_dots{
+	position: absolute;
+	top: 280px;
+}
+.dot{
+	width: 5px;
+	height: 5px;
+	opacity: 0.5;
+	margin: 0 3px;
+	background: #FF1C3B;
 }
 
 /* 第三屏 */
@@ -387,6 +450,31 @@ li{
 	background: #EDEDEF;
 	position: relative;
 	overflow: hidden;
+}
+.section_demo_btn{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	font-family: NotoSansHans-Regular;
+	font-size: 14px;
+	color: #fffefe;
+	z-index: 3;
+	/* cursor: pointer; */
+}
+.prev_btn{
+	left: 173px;
+}
+.next_btn{
+	right: 173px;
+}
+.demo_list{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.demo_list_main{
+	overflow: hidden;
+	min-width: 100%;
 }
 .demo_item{
 	width: 25%;
@@ -404,6 +492,7 @@ li{
 	left: 0;
 	top: 0;
 	background: rgba(0,0,0,0.2);
+	opacity: 1;
 }
 .demo_item_content{
 	position: absolute;
@@ -433,6 +522,13 @@ li{
 	bottom: 0;
 	width: 15px;
 }
+.hover_icon{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	opacity: 0;
+}
 
 /* 第四屏 */
 .op-section.fourth{
@@ -451,6 +547,13 @@ li{
 	width: 100%;
 	height: 674px;
 	overflow: hidden;
+	position: relative;
+}
+.client_bg{
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0;
 }
 .client_main_bottom{
 	height: calc(100% - 674px);
@@ -536,9 +639,19 @@ li{
 	margin: 50px 0;
 }
 
+.client_company_list_main{
+	position: relative;
+}
 .client_company_list{
 	display: flex;
 	flex-wrap: wrap;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+.client_company_list.active{
+	z-index: 2;
 }
 .client_company_item{
 	height: 144px;
@@ -582,7 +695,7 @@ li{
 }
 .client_progress_main{
 	background: #FF1C3B;
-	height: 50%;
+	height: 0%;
 }
 
 /* 第五屏 */
@@ -692,4 +805,81 @@ li{
 	color: #373733;
 	margin-left: 15px;
 	line-height: 1;
+}
+
+/* 响应 */
+@media screen and (max-width:1700px) {
+	.op-section.first{
+		background-size:auto;
+	}
+	.fix_pinuo_logo{
+		height: 100px;
+	}
+	.fix_item{
+		height: 100px;
+		width: 100px;
+		line-height: 100px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.fix_logo{
+		width: 80px;
+	}
+	
+}
+@media screen and (max-width:1500px) {
+	.section_content_main{
+		width: 500px;
+	}
+	.section_right{
+		width: 400px;
+	}
+	.banner_left{
+		padding-left: 100px;
+	}
+}
+@media screen and (max-width:1300px) {
+	.section_content_main{
+		width: 400px;
+	}
+	.section_right{
+		width: 300px;
+	}
+	.banner_info{
+		width: calc(100% - 50px);
+	}
+	.client_right{
+		width: 100%;
+	}
+	.client_company_item{
+		width: calc(100% / 3);
+	}
+	.submit_info_main{
+		padding-left: 20px;
+	}
+	.company_info_item:nth-of-type(3){
+		display: none;
+	}
+	.company_info_item{
+		width: calc(100% / 3);
+	}
+}
+
+@media screen and (max-height:1080px) {
+	.section_second_content{
+		height: calc(100% - 400px);
+	}
+	.section_second_banner{
+		height: 400px;
+	}
+	.demo_item_content{
+		height: 500px;
+	}
+	.client_main_item_top,.client_right{
+		height: 600px;
+	}
+	.client_main_bottom{
+		height: calc(100% - 600px);
+	}
 }

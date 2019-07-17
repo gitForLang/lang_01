@@ -19,6 +19,10 @@ $(document).ready(function(){
 		client2:300,
 		client3:288,
 		client4:350,
+		copywrting:0,	//文案下标
+		goodsIndex:0,	// 第二屏轮播下标
+		speed:5000,		// 轮播时间
+		clientIndex:0,	// 第四屏轮播下标
 		init(){
 			// 获取屏幕高度
 			winHeight = $(window).height();
@@ -45,6 +49,13 @@ $(document).ready(function(){
 				$(".menu_button_icon").attr("src","img/menu_white_icon.png");
 			},function(){
 				$(".menu_button_icon").attr("src","img/menu_icon.png");
+			});
+			$(".menu_icon_main").hover(function(){
+				$(this).css("background","rgb(237,237,239)");
+				$(".menu_icon").attr("src","img/menu_white_icon.png");
+			},function(){
+				$(".menu_icon").attr("src","img/menu_icon.png");
+				$(this).attr("style","");
 			});
 			
 			// 监听屏滚动
@@ -79,6 +90,20 @@ $(document).ready(function(){
 				$(this).children("img").attr("src",active);
 			});
 			
+			// 鼠标经过第三屏
+			$(".demo_item").hover(function(){
+				$(this).children(".demo_item_bg").animate({opacity:0},200);
+				$(this).children(".hover_icon").animate({opacity:1},100);
+			},function(){
+				$(this).children(".demo_item_bg").animate({opacity:1},200);
+				$(this).children(".hover_icon").animate({opacity:0},100);
+			});
+			
+			app.checkCopywrting(app.copywrting);
+			app.autoCheckBanner(app.goodsIndex,app.speed);
+			app.dotAnimate();
+			app.clickNextPage();
+			app.autoCheckClient(app.clientIndex,app.speed);
 		},
 		mathAnimate(name,numberName) {	//数字递增动画
 			var client1Num = parseInt($(name).text());
@@ -90,6 +115,104 @@ $(document).ready(function(){
 					clearInterval(client1Time)
 				}
 			},1);
+		},
+		checkCopywrting(copywrting) {		//文案切换
+			$(".prev_btn2").click(function(){
+				if(copywrting>0){
+					copywrting--;
+					$(".writing_item").animate({opacity:0},500);
+					$(".writing_item").eq(copywrting).animate({opacity:1},500);
+				}
+			});
+			$(".next_btn2").click(function(){
+				if(copywrting<3){
+					copywrting++;
+					$(".writing_item").animate({opacity:0},500);
+					$(".writing_item").eq(copywrting).animate({opacity:1},500);
+				}
+			});
+		},
+		autoCheckBanner(goodsIndex,speed) { // 第二屏图片文章轮播
+			$(".banner_progress_contant").animate({height:"100%"},speed,function(){
+				$(".banner_progress_contant").css("height","0");
+			});
+			setInterval(function(){
+				if(goodsIndex<3){
+					goodsIndex++;
+				} else {
+					goodsIndex=0;
+				}
+				$(".banner_index").text("0"+parseInt(goodsIndex+1));
+				$(".banner_info_item").removeClass("active");
+				$(".banner_right_img,.banner_info_item").animate({opacity:0},500);
+				$(".banner_right_img").eq(goodsIndex).animate({opacity:1},500);
+				$(".banner_info_item").eq(goodsIndex).animate({opacity:1},500);
+				$(".banner_info_item").eq(goodsIndex).addClass("active");
+				$(".banner_progress_contant").animate({height:"100%"},speed,function(){
+					$(".banner_progress_contant").css("height","0");
+				});
+			},speed);
+		},
+		dotAnimate() {	//第二屏点动画
+			var index = 0;
+			setInterval(function(){
+				if(index<2){
+					index++;
+				} else {
+					index=0;
+				}
+				$(".dot").css("opacity","0.5");
+				$(".dot").eq(index).css("opacity","1");
+			},500)
+		},
+		clickNextPage() { // 第三屏切换动画
+			var winWidth = $(window).width();
+			var item = $(".demo_item");
+			$(".demo_item").css("width",winWidth/4);
+			$(".demo_list_main").css("width",item.length*(winWidth/4)+"px");
+			var index = 0;
+			var step = item.length-4;
+			var move = 0;
+			$(".prev_btn").click(function(){
+				if(index>0){
+					index --;
+					move = move + (winWidth/4);
+					$(".demo_list_main").animate({"margin-left":move+"px"});
+				}
+			});
+			$(".next_btn").click(function(){
+				if(index < step){
+					index ++;
+					move = move - (winWidth/4);
+					$(".demo_list_main").animate({"margin-left":move+"px"});
+				}
+			});
+		},
+		autoCheckClient(index,speed) {	// 第四屏切换动画
+			$(".client_progress_main").animate({height:"100%"},speed,function(){
+				$(".client_progress_main").css("height","0");
+			});
+			setInterval(function(){
+				if(index<3){
+					index++;
+				} else {
+					index=0;
+				}
+				$(".client_banner_index").text("0"+parseInt(index+1));
+				
+				$(".client_company_list").removeClass("active");
+				
+				$(".client_bg,.client_company_list").animate({opacity:0},500);
+				
+				$(".client_bg").eq(index).animate({opacity:1},500);
+				
+				$(".client_company_list").eq(index).animate({opacity:1},500);
+				$(".client_company_list").eq(index).addClass("active");
+				
+				$(".client_progress_main").animate({height:"100%"},speed,function(){
+					$(".client_progress_main").css("height","0");
+				});
+			},speed);
 		}
 		
 	}

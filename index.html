@@ -10,15 +10,15 @@
 			<script src="http://libs.baidu.com/html5shiv/3.7/html5shiv.min.js"></script>
 		<![endif]-->
 	</head>
-	<body style="cursor:url(cursor.cur)">
+	<body style="cursor: url(cursor.cur),auto;">
 		<div id="view">
 			<!-- logo start -->
 			<div class="fix_pinuo_logo clearFloat">
 				<div class="fix_item left">
-					<img src="img/logo.png" />
+					<img src="img/logo.png" class="fix_logo" />
 				</div>
-				<div class="fix_item left">
-					<img src="img/menu_icon.png" />
+				<div class="fix_item left menu_icon_main">
+					<img src="img/menu_icon.png" class="menu_icon" />
 				</div>
 			</div>
 			<!-- logo end -->
@@ -28,7 +28,7 @@
 				<div class="page_progress"></div>
 				<!-- 多语言 -->
 				<div class="languages">
-					<div class="language_item">CN</div>
+					<div class="language_item active">CN</div>
 					<div class="language_item">EN</div>
 				</div>
 				<!-- 链接按钮 -->
@@ -104,13 +104,50 @@
 						</div>
 						<!-- 文案切换 -->
 						<div class="second_content_item_right left">
-							<div class="writing_item clearFloat">
-								<div class="writing_item_img left">
-									<img src="img/king_icon.png" />
+							<div class="check_writing_btn clearFloat">
+								<div class="prev_btn2 left">
+									<img src="img/prev_icon2.png" />
 								</div>
-								<div class="writing_item_info left">
-									<div class="writing_item_info_title">品牌定位整合推广</div>
-									<div class="writing_item_info_content">为国内中小企业的品牌化建设提供合适的解决方案，让所有企业都具有自己的企业品质与品牌个性</div>
+								<div class="next_btn2 left">
+									<img src="img/next_icon2.png" />
+								</div>
+							</div>
+							<div class="writing_items clearFloat">
+								<div class="writing_item" style="opacity: 1;">
+									<div class="writing_item_img left">
+										<img src="img/king_icon.png" />
+									</div>
+									<div class="writing_item_info left">
+										<div class="writing_item_info_title">品牌定位整合推广1</div>
+										<div class="writing_item_info_content">为国内中小企业的品牌化建设提供合适的解决方案，让所有企业都具有自己的企业品质与品牌个性</div>
+									</div>
+								</div>
+								<div class="writing_item">
+									<div class="writing_item_img left">
+										<img src="img/king_icon.png" />
+									</div>
+									<div class="writing_item_info left">
+										<div class="writing_item_info_title">品牌定位整合推广2</div>
+										<div class="writing_item_info_content">为国内中小企业的品牌化建设提供合适的解决方案，让所有企业都具有自己的企业品质与品牌个性</div>
+									</div>
+								</div>
+								<div class="writing_item">
+									<div class="writing_item_img left">
+										<img src="img/king_icon.png" />
+									</div>
+									<div class="writing_item_info left">
+										<div class="writing_item_info_title">品牌定位整合推广3</div>
+										<div class="writing_item_info_content">为国内中小企业的品牌化建设提供合适的解决方案，让所有企业都具有自己的企业品质与品牌个性</div>
+									</div>
+								</div>
+								<div class="writing_item">
+									<div class="writing_item_img left">
+										<img src="img/king_icon.png" />
+									</div>
+									<div class="writing_item_info left">
+										<div class="writing_item_info_title">品牌定位整合推广4</div>
+										<div class="writing_item_info_content">为国内中小企业的品牌化建设提供合适的解决方案，让所有企业都具有自己的企业品质与品牌个性</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -119,14 +156,56 @@
 					<div class="section_second_banner">
 						<div class="left banner_left">
 							<div class="banner_index">01</div>
+							<!-- banner 文章切换 -->
 							<div class="banner_info">
-								<div class="banner_title_en">FOR THE BRAND ESCORT</div>
-								<div class="banner_title_cn">为品牌保驾护航</div>
-								<div class="banner_info_content">品诺品牌设计公司，为品牌保驾护航。集合80至90后的创意力量，均是行业内的资深设计师，为您的品牌提供高端的设计服务。“创造一个有灵魂的设计”是品诺兄弟的设计宗旨，我们的愿景是成为国内值得信赖的高品质的设计公司...</div>
-								<div class="clearFloat">
-									<div class="section_content_btn">
-										<div class="section_content_bg"></div>
-										<div class="btn_text">TO LEARN MORE</div>
+								<!-- 点 -->
+								<div class="loading_dots left clearFloat">
+									<div class="dot left" style="opacity: 1;"></div>
+									<div class="dot left"></div>
+									<div class="dot left"></div>
+								</div>
+								<div class="banner_info_item" style="opacity: 1;z-index: 3;">
+									<div class="banner_title_en">FOR THE BRAND ESCORT</div>
+									<div class="banner_title_cn">为品牌保驾护航1</div>
+									<div class="banner_info_content">品诺品牌设计公司，为品牌保驾护航。集合80至90后的创意力量，均是行业内的资深设计师，为您的品牌提供高端的设计服务。“创造一个有灵魂的设计”是品诺兄弟的设计宗旨，我们的愿景是成为国内值得信赖的高品质的设计公司...</div>
+									<div class="clearFloat">
+										<div class="section_content_btn right">
+											<div class="section_content_bg"></div>
+											<div class="btn_text">TO LEARN MORE</div>
+										</div>
+									</div>
+								</div>
+								<div class="banner_info_item">
+									<div class="banner_title_en">FOR THE BRAND ESCORT</div>
+									<div class="banner_title_cn">为品牌保驾护航2</div>
+									<div class="banner_info_content">品诺品牌设计公司，为品牌保驾护航。集合80至90后的创意力量，均是行业内的资深设计师，为您的品牌提供高端的设计服务。“创造一个有灵魂的设计”是品诺兄弟的设计宗旨，我们的愿景是成为国内值得信赖的高品质的设计公司...</div>
+									<div class="clearFloat">
+										<div class="section_content_btn right">
+											<div class="section_content_bg"></div>
+											<div class="btn_text">TO LEARN MORE</div>
+										</div>
+									</div>
+								</div>
+								<div class="banner_info_item">
+									<div class="banner_title_en">FOR THE BRAND ESCORT</div>
+									<div class="banner_title_cn">为品牌保驾护航3</div>
+									<div class="banner_info_content">品诺品牌设计公司，为品牌保驾护航。集合80至90后的创意力量，均是行业内的资深设计师，为您的品牌提供高端的设计服务。“创造一个有灵魂的设计”是品诺兄弟的设计宗旨，我们的愿景是成为国内值得信赖的高品质的设计公司...</div>
+									<div class="clearFloat">
+										<div class="section_content_btn right">
+											<div class="section_content_bg"></div>
+											<div class="btn_text">TO LEARN MORE</div>
+										</div>
+									</div>
+								</div>
+								<div class="banner_info_item">
+									<div class="banner_title_en">FOR THE BRAND ESCORT</div>
+									<div class="banner_title_cn">为品牌保驾护航4</div>
+									<div class="banner_info_content">品诺品牌设计公司，为品牌保驾护航。集合80至90后的创意力量，均是行业内的资深设计师，为您的品牌提供高端的设计服务。“创造一个有灵魂的设计”是品诺兄弟的设计宗旨，我们的愿景是成为国内值得信赖的高品质的设计公司...</div>
+									<div class="clearFloat">
+										<div class="section_content_btn right">
+											<div class="section_content_bg"></div>
+											<div class="btn_text">TO LEARN MORE</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -136,53 +215,79 @@
 							</div>
 						</div>
 						<div class="banner_right left">
-							<img src="img/goods1.png" />
+							<img src="img/goods1.png" class="banner_right_img" style="opacity: 1;" />
+							<img src="img/goods2.png" class="banner_right_img" />
+							<img src="img/goods3.png" class="banner_right_img" />
+							<img src="img/goods4.png" class="banner_right_img" />
 						</div>
 					</div>
 				</div>
 				<!-- 第二屏 end -->
 				<!-- 第三屏 start -->
 				<div class="op-section third">
+					<div class="section_demo_btn prev_btn">
+						<img src="img/prev_icon.png" />　NEXT
+					</div>
+					<div class="section_demo_btn next_btn">
+						NEXT　<img src="img/next_icon.png" />
+					</div>
 					<div class="demo_list clearFloat">
-						<div class="demo_item left">
-							<div class="demo_item_bg">
-								<div class="demo_item_content">
-									<div class="demo_title_en">LOGO DESIGN</div>
-									<div class="demo_title_cn">LOGO设计</div>
-									<div class="demo_tip">营销思维设计，让你赢在起点</div>
+						<div class="demo_list_main">
+							<div class="demo_item left">
+								<div class="demo_item_bg">
+									<div class="demo_item_content">
+										<div class="demo_title_en">LOGO DESIGN1</div>
+										<div class="demo_title_cn">LOGO设计</div>
+										<div class="demo_tip">营销思维设计，让你赢在起点</div>
+									</div>
 								</div>
+								<img src="img/hover_icon.png" class="hover_icon" />
+								<img src="img/demo1.png" class="demo_item_img" />
 							</div>
-							<img src="img/demo1.png" class="demo_item_img" />
-						</div>
-						<div class="demo_item left">
-							<div class="demo_item_bg">
-								<div class="demo_item_content">
-									<div class="demo_title_en">LOGO DESIGN</div>
-									<div class="demo_title_cn">LOGO设计</div>
-									<div class="demo_tip">营销思维设计，让你赢在起点</div>
+							<div class="demo_item left">
+								<div class="demo_item_bg">
+									<div class="demo_item_content">
+										<div class="demo_title_en">LOGO DESIGN2</div>
+										<div class="demo_title_cn">LOGO设计</div>
+										<div class="demo_tip">营销思维设计，让你赢在起点</div>
+									</div>
 								</div>
+								<img src="img/hover_icon.png" class="hover_icon" />
+								<img src="img/demo2.png" class="demo_item_img" />
 							</div>
-							<img src="img/demo2.png" class="demo_item_img" />
-						</div>
-						<div class="demo_item left">
-							<div class="demo_item_bg">
-								<div class="demo_item_content">
-									<div class="demo_title_en">PACKAGING DESIGN</div>
-									<div class="demo_title_cn">包装设计</div>
-									<div class="demo_tip">营销专业定制，提高销量为最终目的</div>
+							<div class="demo_item left">
+								<div class="demo_item_bg">
+									<div class="demo_item_content">
+										<div class="demo_title_en">PACKAGING DESIGN</div>
+										<div class="demo_title_cn">包装设计</div>
+										<div class="demo_tip">营销专业定制，提高销量为最终目的</div>
+									</div>
 								</div>
+								<img src="img/hover_icon.png" class="hover_icon" />
+								<img src="img/demo3.png" class="demo_item_img" />
 							</div>
-							<img src="img/demo3.png" class="demo_item_img" />
-						</div>
-						<div class="demo_item left">
-							<div class="demo_item_bg">
-								<div class="demo_item_content">
-									<div class="demo_title_en">PROPAGANDA</div>
-									<div class="demo_title_cn">宣传品设计</div>
-									<div class="demo_tip">营销专业定制，提高销量为最终目的</div>
+							<div class="demo_item left">
+								<div class="demo_item_bg">
+									<div class="demo_item_content">
+										<div class="demo_title_en">PROPAGANDA</div>
+										<div class="demo_title_cn">宣传品设计</div>
+										<div class="demo_tip">营销专业定制，提高销量为最终目的</div>
+									</div>
 								</div>
+								<img src="img/hover_icon.png" class="hover_icon" />
+								<img src="img/demo4.png" class="demo_item_img" />
 							</div>
-							<img src="img/demo4.png" class="demo_item_img" />
+							<div class="demo_item left">
+								<div class="demo_item_bg">
+									<div class="demo_item_content">
+										<div class="demo_title_en">LOGO DESIGN</div>
+										<div class="demo_title_cn">LOGO设计</div>
+										<div class="demo_tip">营销思维设计，让你赢在起点</div>
+									</div>
+								</div>
+								<img src="img/hover_icon.png" class="hover_icon" />
+								<img src="img/demo1.png" class="demo_item_img" />
+							</div>
 						</div>
 					</div>
 				</div>
@@ -193,7 +298,10 @@
 						<!-- 左侧 -->
 						<div class="client_main_item left">
 							<div class="client_main_item_top">
-								<img src="img/client_bg.png" />
+								<img src="img/client_bg.png" class="client_bg" style="opacity: 1;" />
+								<img src="img/client_bg.png" class="client_bg" />
+								<img src="img/client_bg.png" class="client_bg" />
+								<img src="img/client_bg.png" class="client_bg" />
 							</div>
 							<div class="client_main_bottom">
 								<div class="client_bttom_maths clearFloat">
@@ -232,24 +340,86 @@
 								<div class="client_right_title_cn">合作客户</div>
 								<div class="client_right_descriptiont">对内对外均需要团结合作，才能共创辉煌。助力客户的成功就是我们自己的成功...</div>
 								<!-- 合作客户 -->
-								<div class="client_company_list">
-									<div class="client_company_item">
-										<img src="img/client1.png" />
+								<div class="client_company_list_main">
+									<div class="client_company_list active" style="opacity: 1;">
+										<div class="client_company_item">
+											<img src="img/client1.png" />
+										</div>
+										<div class="client_company_item">
+											<img src="img/client2.png" />
+										</div>
+										<div class="client_company_item">
+											<img src="img/client3.png" />
+										</div>
+										<div class="client_company_item">
+											<img src="img/client4.png" />
+										</div>
+										<div class="client_company_item">
+											<img src="img/client5.png" />
+										</div>
+										<div class="client_company_item">
+											<img src="img/client6.png" />
+										</div>
 									</div>
-									<div class="client_company_item">
-										<img src="img/client2.png" />
+									<div class="client_company_list">
+										<div class="client_company_item">
+											<img src="img/client1.png" />
+										</div>
+										<div class="client_company_item">
+											<img src="img/client2.png" />
+										</div>
+										<div class="client_company_item">
+											<img src="img/client3.png" />
+										</div>
+										<div class="client_company_item">
+											<img src="img/client4.png" />
+										</div>
+										<div class="client_company_item">
+											<img src="img/client5.png" />
+										</div>
+										<div class="client_company_item">
+											<img src="img/client6.png" />
+										</div>
 									</div>
-									<div class="client_company_item">
-										<img src="img/client3.png" />
+									<div class="client_company_list">
+										<div class="client_company_item">
+											<img src="img/client1.png" />
+										</div>
+										<div class="client_company_item">
+											<img src="img/client2.png" />
+										</div>
+										<div class="client_company_item">
+											<img src="img/client3.png" />
+										</div>
+										<div class="client_company_item">
+											<img src="img/client4.png" />
+										</div>
+										<div class="client_company_item">
+											<img src="img/client5.png" />
+										</div>
+										<div class="client_company_item">
+											<img src="img/client6.png" />
+										</div>
 									</div>
-									<div class="client_company_item">
-										<img src="img/client4.png" />
-									</div>
-									<div class="client_company_item">
-										<img src="img/client5.png" />
-									</div>
-									<div class="client_company_item">
-										<img src="img/client6.png" />
+									<div class="client_company_list">
+										<div class="client_company_item">
+											<img src="img/client1.png" />
+										</div>
+										<div class="client_company_item">
+											<img src="img/client2.png" />
+										</div>
+										<div class="client_company_item">
+											<img src="img/client3.png" />
+										</div>
+										<div class="client_company_item">
+											<img src="img/client4.png" />
+										</div>
+										<div class="client_company_item">
+											<img src="img/client5.png" />
+										</div>
+										<div class="client_company_item">
+											<img src="img/client6.png" />
+										</div>
 									</div>
 								</div>
 							</div>
