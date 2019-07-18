@@ -96,6 +96,24 @@ a{
 	width: 100%;
     text-align: center;
 }
+.navtel{
+	position: relative;
+}
+.navtel_num{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: #ededef;
+	height: 50px;
+	width: 0px;
+	color: #FF1C3B;
+	text-align: center;
+    line-height: 50px;
+    left: 60px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
 
 /* 固定logo */
 .fix_pinuo_logo{
@@ -321,6 +339,20 @@ a{
 	left: 0;
 	top: 0;
 }
+.mouseIcon{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.mouse_main{
+	width: 100px;
+	height: 50px;
+	position: absolute;
+	bottom: 30px;
+	left: 50%;
+	transform: translateX(-50%);
+}
 
 /* 第二屏 */
 .op-section.second{
@@ -334,20 +366,22 @@ a{
 	display: flex;
 	align-items: center;
 	position: relative;
+	padding-left: 174px;
 }
 .second_content_item{
 	width: 50%;
+	margin-top: 100px;
 }
 .second_content_item_right{
 	width: 40%;
 	background: #fff;
 	height: 261px;
-	padding: 88px;
+	padding: 88px 50px;
 	position: absolute;
     left: 50%;
 	z-index: 3;
 	bottom: 0;
-    transform: translateY(40%);
+    transform: translateY(87px);
 }
 .check_writing_btn{
 	position: absolute;
@@ -373,6 +407,7 @@ a{
 	letter-spacing: 3px;
 	color: #33332f;
 	margin-bottom: 35px;
+    font-weight: bold;
 }
 .second_content_item_text{
 	font-family: NotoSansHans-Regular;
@@ -406,6 +441,7 @@ a{
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+	font-weight: bold;
 }
 .writing_item_info_content{
 	font-family: NotoSansHans-Regular;
@@ -437,7 +473,8 @@ a{
 	align-items: center;
 	justify-content: center;
 	font-family: NotoSansHans-Medium;
-	font-size: 30px;
+	font-size: 35px;
+	font-weight: bold;
 	letter-spacing: 4px;
 	color: #fcfcf4;
 	position: absolute;
@@ -511,7 +548,7 @@ a{
 }
 .loading_dots{
 	position: absolute;
-	top: 280px;
+	top: 250px;
 }
 .dot{
 	width: 5px;
@@ -575,7 +612,7 @@ a{
 	top: 170px;
 	left: 50%;
 	top: 50%;
-	transform: translate(-50%,-50%);
+	transform: translate(-50%,-70%);
 	height: 644px;
 }
 .demo_title_en{
@@ -603,7 +640,7 @@ a{
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	transform: translate(-50%,-50%);
+	transform: translate(-50%,-100%);
 	opacity: 0;
 }
 
@@ -670,6 +707,7 @@ a{
 	position: absolute;
 	right: 0;
 	bottom: 0;
+	background-color: rgb(255, 28, 59)
 }
 
 .client_banner_index{
@@ -775,6 +813,39 @@ a{
 	height: 0%;
 }
 
+.bottom_menu_btn_main{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	height: 87px;
+	width: 0%;
+	background: red;
+	overflow: hidden;
+}
+.btn_main_left{
+	width: calc(100% - 87px);
+	height: 87px;
+}
+.btn_main_right{
+	width: 87px;
+	height: 87px;
+	line-height: 87px;
+	text-align: center;
+}
+.btn_main_ul{
+	height: 100%;
+}
+.btn_main_ul_li{
+	height: 100%;
+	color: #fff;
+	line-height: 87px;
+	text-align: center;
+	width: calc(100% / 6);
+}
+.btn_main_ul_li a{
+	color: #fff;
+}
+
 /* 第五屏 */
 .op-section.fifth{
 	background: #fff;
@@ -857,7 +928,7 @@ a{
 	outline: none;
 	background: #fff;
 	height: 36px;
-	width: calc(100% - 60px);
+	width: calc(100% - 70px);
 }
 
 .submit_btn{
@@ -887,7 +958,7 @@ a{
 /* 响应 */
 @media screen and (max-width:1700px) {
 	.op-section.first{
-		background-size:auto;
+		/* background-size:auto; */
 	}
 	.fix_pinuo_logo{
 		height: 100px;
@@ -946,6 +1017,7 @@ a{
 @media screen and (max-height:1080px) {
 	.section_second_content{
 		height: calc(100% - 400px);
+		padding-left: 100px;
 	}
 	.section_second_banner{
 		height: 400px;

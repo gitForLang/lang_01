@@ -38,26 +38,51 @@ $(document).ready(function(){
 				$(".menu_button_icon,.loading_block").animate({opacity:1},500);
 				$(".fix_pinuo_logo").animate({opacity:0},500);
 			});
+			// 点击第一屏鼠标icon
+			$(".mouse_main").click(function(){
+				console.log('test')
+				$(".radio_li1").trigger("click");
+				$(".menu_button_icon,.loading_block").animate({opacity:0},500);
+				$(".fix_pinuo_logo").animate({opacity:1},500);
+			});
+			// 鼠标icon动画
+			setInterval(function(){
+				$(".mouseIcon").animate({"top":"100%","opacity":0},1200,function(){
+					$(".mouseIcon").css({"top":"50%","opacity":1});
+				});
+			},1200)
 			// 鼠标经过按钮
-			$(".section_content_btn,.menu_ul_li").hover(function(){
-				/* $(this).css("color","#fff"); */
+			$(".menu_ul_li").hover(function(){
+				$(this).children(".btn_text").children("a").css("color","#fff");
+				$(this).children(".section_content_bg").animate({width:"100%"},200);
+			},function(){
+				$(this).children(".btn_text").children("a").attr("style","");
+				$(this).children(".section_content_bg").animate({width:"0%"},200);
+			});
+			$(".section_content_btn").hover(function(){
+				$(this).css({"color":"#fff","border-color":"#fff"});
 				$(this).children(".section_content_bg").animate({width:"100%"},300);
 			},function(){
-				/* $(this).attr("style",""); */
+				$(this).attr("style","");
 				$(this).children(".section_content_bg").animate({width:"0%"},300);
 			});
 			// 鼠标经过菜单按钮
-			$(".menu_button").hover(function(){
+			/* $(".menu_button").hover(function(){
 				$(".menu_button_icon").attr("src","img/menu_white_icon.png");
 			},function(){
 				$(".menu_button_icon").attr("src","img/menu_icon.png");
-			});
-			$(".menu_icon_main,.bottom_menu").hover(function(){
-				$(this).css("background","#ff1c3b");
-				$(this).children("img").attr("src","img/menu_white_icon.png");
+			}); */
+			// $(".bottom_menu").hover(function(){
+			// 	$(this).css("background","#ff1c3b");
+			// 	$(this).children("img").attr("src","img/menu_white_icon.png");
+			// },function(){
+			// 	$(this).children("img").attr("src","img/menu_icon.png");
+			// 	$(this).attr("style","");
+			// });
+			$(".fix_pinuo_logo").hover(function(){
+				$(this).children("img").attr("src","img/top_r.png");
 			},function(){
-				$(this).children("img").attr("src","img/menu_icon.png");
-				$(this).attr("style","");
+				$(this).children("img").attr("src","img/top.png");
 			});
 			
 			// 监听屏滚动
@@ -110,11 +135,17 @@ $(document).ready(function(){
 			}); */
 			
 			// 打开菜单
-			$(".menu_button,.menu_icon_main,.bottom_menu").click(function(){
+			$(".menu_button,.fix_pinuo_logo").click(function(){
 				$(".pinuo_menu_bg").show();
 				$(".pinuo_menu_main").animate({left:"0"},500);
 				$("#frame").addClass("active");
 				$("#view").addClass("active");
+			});
+			$(".bottom_menu").click(function(){
+				$(".bottom_menu_btn_main").animate({width:"100%"},500);
+			});
+			$(".btn_main_right").click(function(){
+				$(".bottom_menu_btn_main").animate({width:"0%"},500);
 			});
 			// 关闭菜单
 			/* $(document).click(function(e){
@@ -131,6 +162,20 @@ $(document).ready(function(){
 			}); */
 			$(".navclose,.pinuo_menu_bg_main").click(function(){
 				app.closeMenu();
+			});
+			$(".navclose").hover(function(){
+				$(this).children("img").attr("src","img/navclose_r.png");
+			},function(){
+				$(this).children("img").attr("src","img/navclose.png");
+			});
+			
+			// 鼠标经过电话图标
+			$(".navtel").hover(function(){
+				$(this).children("img").attr("src","img/navtel_r.png");
+				$(".navtel_num").animate({width:"150px"},500);
+			},function(){
+				$(this).children("img").attr("src","img/navtel.png");
+				$(".navtel_num").animate({width:"0px"},500);
 			});
 			
 			app.checkCopywrting(app.copywrting);
@@ -263,14 +308,14 @@ $(document).ready(function(){
 			
 			var timer = setInterval(function(){
 				$(".next_btn").trigger("click");
-			},1000);
+			},5000);
 			
 			$(".op-section.third").hover(function(){
 				clearInterval(timer);
 			},function(){
 				timer = setInterval(function(){
 					$(".next_btn").trigger("click");
-				},1000);
+				},5000);
 			});
 		},
 		autoCheckClient(index,speed) {	// 第四屏切换动画
